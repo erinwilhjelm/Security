@@ -1,7 +1,42 @@
-const express = require('./config/express.js')
- 
-// Use env port or default
-const port = process.env.PORT || 5000;
+'use strict'
 
-const app = express.init()
-app.listen(port, () => console.log(`Server now running on port ${port}!`));
+//const express = require('./config/express.js')
+const Hapi = require('Hapi')
+const mongoose = require('mongoose')
+
+
+const server = new Hapi.server({
+    host:'localhost',
+    port: 8000,
+    routes: {
+        cors: true
+    }
+})
+
+server.app.db = mongoose.connect(
+    'mongodb://localhost/hapijslogin',
+    { useNewUrlParser: true }
+  )
+  const init = async () => {
+    await server
+      .register(
+        { plugin: require('./routes/Users') },
+        {
+          routes: {
+            prefix: '/users'
+          }
+        }
+      )
+      .catch(err => {
+        console.log(err)
+      })
+  
+    await server.start()
+    console.log(`Server running at: ${server.info.uri}`)
+  }
+  
+  init()
+
+
+
+ 
