@@ -39,7 +39,7 @@ exports.plugin = {
                                         return 'error: ' + err
                                     })
                             })
-                            return {status: userData.email + 'Registered'}
+                            return userData
                         } else {
                             return{error: 'User already exists'}
                         }
@@ -71,7 +71,7 @@ exports.plugin = {
                             let token = jwt.sign(payload, process.env.SECRET_KEY, {
                                 expiresIn: 1440
                             })
-                            return token
+                            return { token: token }
     
 
                         }else{
