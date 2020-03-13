@@ -7,14 +7,14 @@ const mongoose = require('mongoose')
 
 const server = new Hapi.server({
     host:'localhost',
-    port: 8000,
+    port: process.env.PORT || 5000,
     routes: {
         cors: true
     }
 })
 
 server.app.db = mongoose.connect(
-    'mongodb://localhost/hapijslogin',
+    'mongodb+srv://erin:uiopas11@cluster0-khpzs.gcp.mongodb.net/test?retryWrites=true&w=majority',
     { useNewUrlParser: true }
   )
   const init = async () => {
