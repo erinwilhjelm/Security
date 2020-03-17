@@ -2,7 +2,7 @@
   "name": "react_template_repo",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha server/tests",
     "install-all": "concurrently \"npm install\" \"cd client && npm install\"",
@@ -38,6 +38,7 @@
     "mongoose": "^5.9.4",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.4",
+    "react-router-dom": "^5.1.2",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
   },

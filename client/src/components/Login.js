@@ -5,7 +5,7 @@ class Login extends Component {
     constructor() {
         super()
         this.state = {
-            
+
             email: '',
             password: '',
         }
@@ -24,7 +24,7 @@ class Login extends Component {
 
         const newUser = {
           
-            email: this.state.enail,
+            email: this.state.email,
             password: this.state.password
         }
 
