@@ -70,12 +70,17 @@ exports.plugin = {
                   let token = jwt.sign(payload, process.env.SECRET_KEY, {
                     expiresIn: 1440
                   })
+
                   return token
-                } else {
+                  
+                } 
+                
+                if(!user) {
                   return { error: 'User does not exist' }
+
                 }
               } else {
-                return { error: 'User does not exist' }
+                return { error: 'User does not exist'}
               }
             })
             .catch(err => {
@@ -100,7 +105,7 @@ exports.plugin = {
               if (user) {
                 return user
               } else {
-                return 'User does not exist'
+                return { error: 'User already exists' }
               }
             })
             .catch(err => {

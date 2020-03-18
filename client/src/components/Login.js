@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {login} from './UserFunctions'
 
+
 class Login extends Component {
     constructor() {
         super()
@@ -8,8 +9,8 @@ class Login extends Component {
 
             email: '',
             password: '',
+            errors: {}
         }
-            
 
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
@@ -22,15 +23,25 @@ class Login extends Component {
     onSubmit(e) {
         e.preventDefault()
 
-        const newUser = {
-          
+        const user = {
             email: this.state.email,
             password: this.state.password
         }
 
-        login(newUser).then(res =>{
-            this.props.history.push('/profile')
+        login(user).then(res =>{
+
+            const result = (typeof res === 'string')
+            if(result) {
+                this.props.history.push(`/profile`)
+            }
+            else {
+                alert('incorrect username or password')
+                this.props.history.push(`/login`)
+            }
+ 
+        
         })
+
     }
 
     render() {

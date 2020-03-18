@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const register = newUser => {
     return axios
     .post('users/register', {
@@ -23,23 +24,16 @@ export const login = user => {
 
     })
     .then(res => {
+       // if(res.data)
         localStorage.setItem('usertoken', res.data)
+        console.log(res.data)
         return res.data
+
     })
     .catch(err => {
         console.log('Invalid username and password', + err)
+        //this.props.history.push(`/register`)
     })
-
-}
-
-export const getUser = async id => {
-    try {
-        const response = await axios
-            .get('users/getuser/', { id });
-    }
-    catch (err) {
-        return err;
-    }
 
 }
 
