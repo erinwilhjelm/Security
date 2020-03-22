@@ -35,6 +35,7 @@ class Login extends Component {
                 this.props.history.push(`/profile`)
             }
             else {
+                localStorage.removeItem('usertoken')
                 alert('incorrect username or password')
                 this.props.history.push(`/login`)
             }
