@@ -1,3 +1,7 @@
+Screencast : https://drive.google.com/file/d/1Hczgg0gCfsmftjFisubn_t1-skkscUiR/view
+
+
+
 ## _**PLEASE READ THIS TO COMPLETION BEFORE ASKING ANY QUESTIONS!**_
 
 This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
