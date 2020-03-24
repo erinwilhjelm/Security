@@ -1,5 +1,6 @@
 Screencast : https://drive.google.com/file/d/1Hczgg0gCfsmftjFisubn_t1-skkscUiR/view
-
+Report : https://github.com/erinwilhjelm/Security/blob/master/Mini-Project%201.pdf
+Diagram : https://github.com/erinwilhjelm/Security/blob/master/diagrams.pdf
 
 
 ## _**PLEASE READ THIS TO COMPLETION BEFORE ASKING ANY QUESTIONS!**_
